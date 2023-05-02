@@ -22,6 +22,12 @@
     <Filter Include="소스 파일\MainUpdate">
       <UniqueIdentifier>{a96ef672-6e1c-4b05-bdf1-324300c7c75a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{a763d4f9-960b-4f27-9a53-05c8ada66303}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Player">
+      <UniqueIdentifier>{6b913fa7-fa60-4a6b-a5db-3f9c299b8ac1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -45,6 +51,15 @@
     <ClInclude Include="Include.h">
       <Filter>헤더 파일\include</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Structs.h">
+      <Filter>헤더 파일\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\Object\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainUpdate.cpp">
@@ -52,6 +67,12 @@
     </ClCompile>
     <ClCompile Include="win32API_Framework.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\Object\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

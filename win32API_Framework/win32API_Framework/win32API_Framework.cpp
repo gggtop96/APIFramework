@@ -46,10 +46,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     MSG msg;
 
     msg.message = NULL;
+
+   
     // 기본 메시지 루프입니다:
 
     MainUpdate Main;
-    //Main
+    Main.Start();
+
+
+   ULONGLONG Time = GetTickCount64();
 
     while (msg.message != WM_QUIT)
     {
@@ -61,8 +66,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
         else
         {
+            if (Time < GetTickCount64())
+            {
+            Time = GetTickCount64();
+            
             Main.Update();
             Main.Render();
+            }
         }
     }
 

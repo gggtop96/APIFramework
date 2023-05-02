@@ -1,81 +1,45 @@
 #include "MainUpdate.h"
+#include "Player.h"
 
-MainUpdate::MainUpdate()
+MainUpdate::MainUpdate() : m_pPlayer(NULL)
 {
 
 }
 
 MainUpdate::~MainUpdate()
 {
-
+	Destroy();
 }
 
 void MainUpdate::Start()
 {
 	m_hdc = GetDC(g_hWnd);
 
-	rcPoint.left = 100;
-	rcPoint.top = 100;
-
-	rcPoint.right = 200;
-	rcPoint.bottom = 200;
-
+	m_pPlayer = new Player();
+	m_pPlayer->Start();
 }
 
-void gotoxy(int x, int y)
-{
-	COORD Pos = { x - 1, y - 1 };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
-}
+
 
 void MainUpdate::Update()
 {
-	int x = 1;
-	int y = 1;
-	gotoxy(x, y);
-
-	if (GetAsyncKeyState(VK_UP))
-	{
-		rcPoint.top;
-	}
-
-	if (GetAsyncKeyState(VK_DOWN))
-	{
-		rcPoint.bottom;
-	}
-
-	if (GetAsyncKeyState(VK_LEFT))
-	{
-		rcPoint.left += 1;
-		//rcPoint.right += 1;
-	}
-
-	if (GetAsyncKeyState(VK_RIGHT))
-	{
-		rcPoint.right += 1;
-		//rcPoint.left += 1;
-	}
-
-	if (GetAsyncKeyState(VK_SPACE))
-	{
-	
-	}
+	m_pPlayer->Update();
 }
 
 void MainUpdate::Render()
 {
-	Rectangle(m_hdc, 0, 0, 1280, 720);
 
-	Rectangle(m_hdc,
-		rcPoint.left,
-		rcPoint.top,
-		rcPoint.right,
-		rcPoint.bottom);
+	Rectangle(m_hdc,0, 0, 1420, 720);
+
+	m_pPlayer->Render(m_hdc);
 
 }
 
 void MainUpdate::Destroy()
 {
+
+		delete m_pPlayer;
+		m_pPlayer = NULL;
 
 }
 
