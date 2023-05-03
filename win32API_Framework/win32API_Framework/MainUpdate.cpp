@@ -20,16 +20,16 @@ void MainUpdate::Start()
 	m_pPlayer -> Start();
 
 	m_pEnemy = new Enemy();
-	m_pEnemy->Start();
+	m_pEnemy -> Start();
 }
 
 void MainUpdate::Update()
 {
 	if (m_pPlayer)
-	m_pPlayer->Update();
+	m_pPlayer -> Update();
 
 	if (m_pEnemy)
-		m_pEnemy->Update();
+		m_pEnemy -> Update();
 }
 
 void MainUpdate::Render()
@@ -37,10 +37,10 @@ void MainUpdate::Render()
 	Rectangle(m_hdc,0, 0, WIDTH, HEIGHT);
 
 	if(m_pPlayer)
-	m_pPlayer->Render(m_hdc);
+	m_pPlayer -> Render(m_hdc);
 
 	if (m_pEnemy)
-		m_pEnemy->Render(m_hdc);
+		m_pEnemy -> Render(m_hdc);
 
 }
 

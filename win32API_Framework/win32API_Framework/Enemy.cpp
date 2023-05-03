@@ -48,13 +48,27 @@ void Enemy::Destroy()
 
 BOOL Iscollision(float c1x, float c1y, float c1r, float c2x, float c2y, float c2r)
 {
-	float deltaX = c1x = c2x;
+	float deltaX = c1x - c2x;
 	float deltaY = c1y - c2y;
 
-	float length = sqrt(deltaX * deltaX + deltaY * deltaY);
+	float Distance = sqrt(deltaX * deltaX + deltaY * deltaY);
 
-	if (length > (c1r + c2r))
+	if (Distance > (c1r + c2r))
 		return FALSE;
 
+
+	for(i = BulletList.begin(); i != End;) // 총알의 배열하고 끝좌표?
+	{
+
+		float fx = 총알의 x값 - 몬스터의 x값;
+		float fy = 총알의 y값 - 몬스터의 y값;
+		float distance = sqrt(fx * fx + fy * fy);
+
+		if (distance <= 총알의 반지름 + 몬스터의 반지름)
+		{
+			i = Bullet.erase();
+			End = Bullet.end();
+		}
+	}
 	return TRUE;
 }
