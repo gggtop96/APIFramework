@@ -1,12 +1,9 @@
 #pragma once
 #include "GameObject.h"
 
-class Player : public GameObject
+class Bullet : public GameObject
 {
-private:
-	GameObject* BulletList[BULLETCOUNT];
-
-public:		// 로직 함수
+public:
 	virtual void Start()override;
 	virtual void Start(Vector3 _position)override;
 	//GameObject 헤더에서 만든 가상함수를 override
@@ -14,10 +11,7 @@ public:		// 로직 함수
 	virtual void Render(HDC hdc)override;
 	virtual void Destroy()override;
 
-public:		//custom 함수
-	GameObject* CreateBullet();
-
 public:
-	Player();
-	virtual ~Player();
+	Bullet();
+	virtual ~Bullet();
 };
