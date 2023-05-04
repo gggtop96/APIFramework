@@ -18,7 +18,14 @@ void Bullet::Start()
 	transform.rotation = Vector3(0.0f, 0.0f, 0.0f);
 	transform.scale = Vector3(30.0f, 30.0f, 0.0f);
 
-	Speed = 15;
+
+	// 빗변의 길이(거리)
+	float distance = sqrt((transform.position.x * transform.position.x) +
+		(transform.position.y * transform.position.y));
+	
+		Speed = 15;
+
+		Key = "Bullet";
 }
 
 void Bullet::Start(Vector3 _position)
@@ -26,8 +33,10 @@ void Bullet::Start(Vector3 _position)
 	transform.position = _position;
 	transform.rotation = Vector3(0.0f, 0.0f, 0.0f);
 	transform.scale = Vector3(30.0f, 30.0f, 0.0f);
-
+	
 	Speed = 15;
+
+	Key = "Bullet";
 }
 
 int Bullet::Update()

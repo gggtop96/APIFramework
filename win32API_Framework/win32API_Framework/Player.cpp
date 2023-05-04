@@ -19,8 +19,6 @@ void Player::Start()
 
 	Speed = 5.0f;
 
-	for (int i = 0; i < BULLETCOUNT; ++i)
-		BulletList[i] = nullptr;
 }
 
 void Player::Start(Vector3 _position)
@@ -30,17 +28,7 @@ void Player::Start(Vector3 _position)
 
 int Player::Update()
 {
-	for (int i = 0; i < BULLETCOUNT; ++i)
-	{
-		if (BulletList[i] != nullptr)
-		{
-			if (BulletList[i]->Update())
-			{
-				delete BulletList[i];
-				BulletList[i] = nullptr;
-			}
-		}
-	}
+
 
 	if (GetAsyncKeyState(VK_UP))
 		transform.position.y -= Speed;
@@ -56,15 +44,7 @@ int Player::Update()
 
 	if (GetAsyncKeyState(VK_SPACE))
 	{
-		for (int i = 0; i < BULLETCOUNT; ++i)
-		{
-			if(BulletList[i] == nullptr)
-			{ 
-				BulletList[i] = CreateBullet();
-				break;
-			}
-		}
-			
+		ObjectManager::GetInstance()->AddObject(CreateBullet());
 	}
 
 	return 0;
@@ -77,10 +57,6 @@ void Player::Render(HDC hdc)
 		int(transform.position.y - (transform.scale.y * 0.5f)),
 		int(transform.position.x + (transform.scale.x * 0.5f)),
 		int(transform.position.y + (transform.scale.y * 0.5f)) );
-
-	for (int i = 0; i < BULLETCOUNT; ++i)
-		if (BulletList[i] != nullptr)
-			BulletList[i]->Render(hdc);
 
 
 }

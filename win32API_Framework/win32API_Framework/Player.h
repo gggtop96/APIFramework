@@ -3,8 +3,6 @@
 
 class Player : public GameObject
 {
-private:
-	GameObject* BulletList[BULLETCOUNT];
 
 public:		// 로직 함수
 	virtual void Start()override;
