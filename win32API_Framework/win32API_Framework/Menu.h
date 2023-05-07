@@ -1,8 +1,7 @@
 #pragma once
-#include "include.h"
+#include "Scene.h"
 
-
-class Menu
+class Menu : public Scene
 {
 public:
 	virtual void Start()override;
@@ -13,6 +12,5 @@ public:
 public:
 	Menu();
 	virtual ~Menu();
-
 };
 

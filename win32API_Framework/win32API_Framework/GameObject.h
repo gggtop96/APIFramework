@@ -11,10 +11,9 @@ protected:
 	
 	string Key;
 public:
-	virtual void Start()PURE;
+	virtual GameObject* Start()PURE;
 	virtual void Start(Vector3 _position)PURE; 
 	// _position 매개변수 생성 player, Bullet 헤더파일에도 생성
-	
 	virtual int Update()PURE;
 	virtual void Render(HDC hdc)PURE;
 	virtual void Destroy()PURE;

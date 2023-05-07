@@ -1,16 +1,14 @@
 #pragma once
-#include "include.h"
+#include "Include.h"
 
 class Scene;
 class SceneManager
 {
-
-
 private:
 	static SceneManager* Instance;
 
 public:
-	static SceneManager* GetInstnace()
+	static SceneManager* GetInstance()
 	{
 		if (Instance == nullptr)
 			Instance = new SceneManager;
@@ -18,12 +16,16 @@ public:
 	}
 private:
 	Scene* SceneState;
+
 public:
-	void SetScene(SCENEID _State)
-		void
+	void SetScene(SCENEID _State);
+	void Update();
+	void Render(HDC hdc);
+	void Destroy();
 
 private:
 	SceneManager();
+
 public:
 	~SceneManager();
 };

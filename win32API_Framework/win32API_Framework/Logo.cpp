@@ -1,16 +1,12 @@
 #include "Logo.h"
 #include "SceneManager.h"
 
-
-
 Logo::Logo()
 {
-
 }
 
 Logo::~Logo()
 {
-
 }
 
 void Logo::Start()
@@ -18,14 +14,17 @@ void Logo::Start()
 
 }
 
-void Logo::Update()
+int Logo::Update()
 {
+	if (GetAsyncKeyState('A'))
+		SceneManager::GetInstance()->SetScene(MENU);
 
+	return 0;
 }
 
 void Logo::Render(HDC hdc)
 {
-	Ellipse(hdc, 0, 0, 0, 0);
+	Rectangle(hdc, 500, 500, 600, 600);
 }
 
 void Logo::Destroy()

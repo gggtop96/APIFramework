@@ -3,7 +3,6 @@
 
 #include "framework.h"
 #include "win32API_Framework.h"
-#include "Include.h"
 #include "MainUpdate.h";
 
 #define MAX_LOADSTRING 100
@@ -44,11 +43,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WIN32APIFRAMEWORK));
 
     MSG msg;
-
     msg.message = NULL;
-
-   
     // 기본 메시지 루프입니다:
+
 
     MainUpdate Main;
     Main.Start();

@@ -19,9 +19,6 @@
     <Filter Include="헤더 파일\include">
       <UniqueIdentifier>{2ac60f70-62d9-4538-a821-039ba0447ad8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\MainUpdate">
-      <UniqueIdentifier>{a96ef672-6e1c-4b05-bdf1-324300c7c75a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\01.GameObject">
       <UniqueIdentifier>{a763d4f9-960b-4f27-9a53-05c8ada66303}</UniqueIdentifier>
     </Filter>
@@ -58,6 +55,9 @@
     <Filter Include="소스 파일\02.Scene\Logo">
       <UniqueIdentifier>{117a9e79-419c-4b7c-b52b-02e935c49b3b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\00.MainUpdate">
+      <UniqueIdentifier>{a96ef672-6e1c-4b05-bdf1-324300c7c75a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -73,7 +73,7 @@
       <Filter>헤더 파일\Headers</Filter>
     </ClInclude>
     <ClInclude Include="MainUpdate.h">
-      <Filter>소스 파일\MainUpdate</Filter>
+      <Filter>소스 파일\00.MainUpdate</Filter>
     </ClInclude>
     <ClInclude Include="Define.h">
       <Filter>헤더 파일\include</Filter>
@@ -123,7 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainUpdate.cpp">
-      <Filter>소스 파일\MainUpdate</Filter>
+      <Filter>소스 파일\00.MainUpdate</Filter>
     </ClCompile>
     <ClCompile Include="win32API_Framework.cpp">
       <Filter>소스 파일</Filter>

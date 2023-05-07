@@ -1,17 +1,17 @@
 #pragma once
-#include "include.h"
+#include "Scene.h"
 
 class GameObject;
-class Stage
+class Stage : public Scene
 {
 private:
 	GameObject* m_pPlayer;
 
 public:
-	virtual void Start()PURE;
-	virtual int Update()PURE;
-	virtual void Render(HDC hdc)PURE;
-	virtual void Destroy()PURE;
+	virtual void Start()override;
+	virtual int Update()override;
+	virtual void Render(HDC hdc)override;
+	virtual void Destroy()override;
 
 public:
 	Stage();

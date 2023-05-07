@@ -1,14 +1,10 @@
 #pragma once
 #include "Include.h"
 
-class GameObject;
 class MainUpdate
 {
 private:
 	HDC m_hdc;
-
-	
-	GameObject* m_pEnemy;
 
 public:
 	void Start();
@@ -19,6 +15,5 @@ public:
 public:
 	MainUpdate();
 	~MainUpdate();
-
 };
 
